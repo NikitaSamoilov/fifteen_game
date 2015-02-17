@@ -5,6 +5,7 @@ public abstract class Die {
     protected int rating;
     protected int row;
     protected int col;
+    protected Field parentField;
 
     public int getRating() {
         return rating;
@@ -20,7 +21,10 @@ public abstract class Die {
     }
 
 
-    public Die(int rating, int row, int col) {
+    public Die(Field parentField, int rating, int row, int col) {
+        this.parentField = parentField;
+        this.row = row;
+        this.col = col;
         this.rating = rating;
     }
 
