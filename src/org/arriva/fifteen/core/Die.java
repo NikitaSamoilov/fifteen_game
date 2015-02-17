@@ -2,30 +2,26 @@ package org.arriva.fifteen.core;
 
 public abstract class Die {
 
-    protected int rating;
-    protected int row;
-    protected int col;
+    protected DieProperty property;
     protected Field parentField;
 
     public int getRating() {
-        return rating;
+        return property.rating;
     }
 
     public int getRow() {
-        return row;
+        return property.row;
     }
 
 
     public int getCol() {
-        return col;
+        return property.col;
     }
 
 
-    public Die(Field parentField, int rating, int row, int col) {
+    public Die(Field parentField, DieProperty property) {
         this.parentField = parentField;
-        this.row = row;
-        this.col = col;
-        this.rating = rating;
+        this.property = property;
     }
 
 
