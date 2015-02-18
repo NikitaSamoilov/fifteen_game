@@ -15,6 +15,11 @@ public abstract class Field {
         return colCount;
     }
 
+    public Field(int rowCount, int colCount) {
+        this.rowCount = rowCount;
+        this.colCount = colCount;
+    }
+
     public abstract void scatterCells();
     public abstract List<Integer> getMobileCellRatings();
     public abstract RankingState getRankingState();
