@@ -2,7 +2,6 @@ package org.arriva.fifteen.core.impl;
 
 import org.arriva.fifteen.core.*;
 
-import java.math.BigInteger;
 import java.util.*;
 
 
@@ -14,6 +13,7 @@ public class TrivialField extends Field {
 
     public TrivialField(int rowCount, int colCount) {
         super(rowCount, colCount);
+        fieldHelper = new TrivialFieldHelper(this);
         dies = new Die[rowCount][colCount];
         scatterCells();
         rankingState = RankingState.Disorder;
@@ -23,11 +23,11 @@ public class TrivialField extends Field {
     @Override
     public void scatterCells() {
         // TODO: It's awful and incorrect - remake
-        List<Integer> raitings = getShuffledRaitings(rowCount * colCount - 1);
+        List<Integer> raitings = fieldHelper.getShuffledRaitings(rowCount * colCount - 1);
 
         for (int i = 0; i < rowCount; i++) {
             for (int j = 0; j < colCount; j++) {
-                dies[i][j] = initDie(i, j, raitings.get(i * colCount + j));
+                dies[i][j] = fieldHelper.initDieInField(i, j, raitings.get(i * colCount + j));
             }
         }
     }
@@ -47,21 +47,4 @@ public class TrivialField extends Field {
         // TODO: Implement logic
     }
 
-    private Die initDie(int row, int col, int rating) {
-        DieProperty property = new DieProperty();
-        property.row = row;
-        property.col = col;
-        property.rating = rating;
-        return new TrivialDie(this, property);
-    }
-
-    private List<Integer> getShuffledRaitings(int count) {
-        List<Integer> values = new ArrayList<Integer>();
-
-        for (int i = 0; i < count; i++) {
-            values.add(i + 1);
-        }
-        Collections.shuffle(values);
-        return values;
-    }
 }

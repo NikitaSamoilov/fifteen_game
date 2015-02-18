@@ -6,6 +6,7 @@ public abstract class Field {
 
     protected int rowCount;
     protected int colCount;
+    protected FieldHelper fieldHelper;
 
     public int getRowCount() {
         return rowCount;
