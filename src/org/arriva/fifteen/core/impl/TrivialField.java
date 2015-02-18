@@ -15,13 +15,13 @@ public class TrivialField extends Field {
         super(rowCount, colCount);
         fieldHelper = new TrivialFieldHelper(this);
         dies = new Die[rowCount][colCount];
-        scatterCells();
+        scatterDies();
         rankingState = RankingState.Disorder;
     }
 
 
     @Override
-    public void scatterCells() {
+    public void scatterDies() {
         // TODO: It's awful and incorrect - remake
         List<Integer> raitings = fieldHelper.getShuffledRaitings(rowCount * colCount - 1);
 
@@ -33,7 +33,7 @@ public class TrivialField extends Field {
     }
 
     @Override
-    public List<Integer> getMobileCellRatings() {
+    public List<Integer> getMobileDieRatings() {
         return null; // TODO: Implement logic
     }
 
@@ -43,7 +43,7 @@ public class TrivialField extends Field {
     }
 
     @Override
-    public void moveCell(int cellRating) {
+    public void moveDie(int cellRating) {
         // TODO: Implement logic
     }
 

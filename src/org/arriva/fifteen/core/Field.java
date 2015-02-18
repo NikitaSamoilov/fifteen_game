@@ -21,9 +21,9 @@ public abstract class Field {
         this.colCount = colCount;
     }
 
-    public abstract void scatterCells();
-    public abstract List<Integer> getMobileCellRatings();
+    public abstract void scatterDies();
+    public abstract List<Integer> getMobileDieRatings();
     public abstract RankingState getRankingState();
-    public abstract void moveCell(int cellRating);
+    public abstract void moveDie(int cellRating);
 
 }

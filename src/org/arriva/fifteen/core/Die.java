@@ -8,6 +8,10 @@ public abstract class Die {
     public int getRating() {
         return property.rating;
     }
+    
+    public void setRating(int rating) {
+        property.rating = rating;
+    }
 
     public int getRow() {
         return property.row;
@@ -23,11 +27,5 @@ public abstract class Die {
         this.parentField = parentField;
         this.property = property;
     }
-
-
-    public abstract void moveUp();
-    public abstract void moveDown();
-    public abstract void moveLeft();
-    public abstract void moveRight();
 
 }
