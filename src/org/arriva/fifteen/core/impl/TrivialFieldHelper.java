@@ -8,7 +8,7 @@ import org.arriva.fifteen.core.FieldHelper;
 public class TrivialFieldHelper extends FieldHelper {
 
 
-    public TrivialFieldHelper(Field field) {
+    public TrivialFieldHelper(TrivialField field) {
         super(field);
     }
 

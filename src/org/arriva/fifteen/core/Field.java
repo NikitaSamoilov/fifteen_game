@@ -22,8 +22,8 @@ public abstract class Field {
     }
 
     public abstract void scatterDies();
-    public abstract List<Integer> getMobileDieRatings();
+    public abstract List<Die> getMobileDieRatings();
     public abstract RankingState getRankingState();
-    public abstract void moveDie(int cellRating);
+    public abstract void moveDie(Die die);
 
 }
