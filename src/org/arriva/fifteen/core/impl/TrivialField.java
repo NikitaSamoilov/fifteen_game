@@ -65,7 +65,9 @@ public class TrivialField extends Field {
 
     @Override
     public void moveDie(Die die) {
-        // TODO: Implement logic
+        emptyCell.setRating(die.getRating());
+        die.setRating(SpecialDieRatings.EMPTY_CELL_RATING);
+        emptyCell = die;
     }
 
 }
