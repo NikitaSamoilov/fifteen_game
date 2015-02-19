@@ -36,8 +36,8 @@ public class TrivialField extends Field {
     }
 
     @Override
-    public List<Die> getMobileDieRatings() {
-        List<Die> neighborDies = Collections.EMPTY_LIST;
+    public List<Die> getMobileDies() {
+        List<Die> neighborDies = new ArrayList<Die>();
 
         if (emptyCell.getRow() > 0) {
             neighborDies.add(dies[emptyCell.getRow() - 1][emptyCell.getCol()]);

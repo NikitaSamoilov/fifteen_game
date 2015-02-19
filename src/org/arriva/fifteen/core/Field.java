@@ -22,7 +22,7 @@ public abstract class Field {
     }
 
     public abstract void scatterDies();
-    public abstract List<Die> getMobileDieRatings();
+    public abstract List<Die> getMobileDies();
     public abstract RankingState getRankingState();
     public abstract void moveDie(Die die);
     public abstract String fieldAsString();
