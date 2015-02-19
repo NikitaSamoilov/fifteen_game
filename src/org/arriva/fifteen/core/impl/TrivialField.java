@@ -70,4 +70,17 @@ public class TrivialField extends Field {
         emptyCell = die;
     }
 
+    @Override
+    public String fieldAsString() {
+        StringBuilder strBuilder = new StringBuilder();
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < colCount; j++) {
+                strBuilder.append(String.valueOf(dies[i][j].getRating()) + "\t");
+            }
+            strBuilder.append("\n");
+        }
+
+        return strBuilder.toString();
+    }
+
 }

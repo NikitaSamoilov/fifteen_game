@@ -25,5 +25,6 @@ public abstract class Field {
     public abstract List<Die> getMobileDieRatings();
     public abstract RankingState getRankingState();
     public abstract void moveDie(Die die);
+    public abstract String fieldAsString();
 
 }
