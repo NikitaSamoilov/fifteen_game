@@ -68,6 +68,10 @@ public class TrivialField extends Field {
         emptyCell.setRating(die.getRating());
         die.setRating(SpecialDieRatings.EMPTY_CELL_RATING);
         emptyCell = die;
+
+        if (isRank()) {
+            rankingState = RankingState.Order;
+        }
     }
 
     @Override
@@ -81,6 +85,26 @@ public class TrivialField extends Field {
         }
 
         return strBuilder.toString();
+    }
+
+    private boolean isRank() {
+        if ((emptyCell.getRow() != rowCount - 1) || (emptyCell.getCol() != colCount - 1)) {
+            return false;
+        }
+
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < colCount; j++) {
+                if (!isLastDie(i, j) && (dies[i][j].getRating() != i * colCount + j + 1)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private boolean isLastDie(int row, int col) {
+        return row == rowCount - 1 && col == colCount - 1;
     }
 
 }

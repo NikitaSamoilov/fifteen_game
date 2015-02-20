@@ -2,6 +2,7 @@ package org.arriva.fifteen;
 
 import org.arriva.fifteen.core.Die;
 import org.arriva.fifteen.core.Field;
+import org.arriva.fifteen.core.RankingState;
 import org.arriva.fifteen.core.impl.TrivialField;
 import org.arriva.fifteen.impl.ConsoleFifteenGameHelper;
 
@@ -19,7 +20,7 @@ public class FifteenGame {
 
         helper.drawStep(field, diesToMove);
 
-        while (scanner.hasNextLine()) {
+        while (field.getRankingState() != RankingState.Order && scanner.hasNextLine()) {
             if (scanner.hasNextInt()) {
                 int choosedDieNumber = scanner.nextInt();
                 if (choosedDieNumber > 0 && choosedDieNumber <= diesToMove.size()) {
